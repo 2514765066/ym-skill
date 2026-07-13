@@ -1,0 +1,4 @@
+interface:
+  display_name: "回复风格"
+  short_description: "统一简洁直接的中文技术回复风格"
+  default_prompt: "Use $ym-response-style to write this response."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "通用代码规范"
+  short_description: "统一 TypeScript 与 JavaScript 代码风格"
+  default_prompt: "Use $ym-code-style to implement this code change."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "React 规范"
+  short_description: "统一 React 与 TSX 组件开发规范"
+  default_prompt: "Use $ym-react to implement this React component."
