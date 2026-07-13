@@ -75,8 +75,24 @@ export const OrderSummary = ({ total }: OrderSummaryProps): JSX.Element => {
 };
 ```
 
+## Tailwind CSS v4 类名顺序
+
+- 编写 `class` 或 `className` 时，按以下分组从前到后排列：自定义类名 → 尺寸 → 定位 → 布局与对齐 → 其余样式 → 颜色与主题。
+- 自定义类名必须置于最前，例如组件样式类、业务状态类或第三方组件覆写类。
+- 尺寸类紧随其后，例如 `w-full`、`h-full`、`size-full` 及其他 `w-*`、`h-*`、`size-*`。
+- 定位类置于尺寸之后，例如 `relative`、`absolute`、`fixed`、`sticky`、`top-*`、`right-*`、`bottom-*`、`left-*`、`inset-*`、`z-*`。
+- 布局与对齐类置于定位之后，例如 `flex`、`grid`、`block`、`items-center`、`justify-center`、`gap-*`。
+- 颜色和主题相关类必须放在最后，例如 `bg-*`、`text-*`、`border-*`、`ring-*`、`fill-*`、`stroke-*`、深色模式及其他主题变体。
+- 同一分组内按语义和阅读顺序保持稳定；不要为了机械排序打散成对表达同一意图的类名。
+
+```tsx
+// 自定义类名 → 尺寸 → 定位 → 布局与对齐 → 颜色与主题
+<div className="order-card w-full h-full relative top-0 left-0 flex items-center justify-center bg-white text-slate-900 dark:bg-slate-900 dark:text-white" />
+```
+
 ## 交付前检查
 
 - 检查是否出现 `function`、`var`、隐式返回箭头函数或无注释函数。
 - 检查函数命名、文件命名、早返回及 `const` 使用是否符合规范。
 - 检查 React 文件是否职责过多；必要时拆分为多个语义清晰的文件。
+- 检查 Tailwind CSS v4 类名是否遵循：自定义类名 → 尺寸 → 定位 → 布局与对齐 → 其余样式 → 颜色与主题。
