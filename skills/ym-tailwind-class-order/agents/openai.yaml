@@ -1,4 +1,0 @@
-interface:
-  display_name: "Tailwind 类名排序"
-  short_description: "统一 Tailwind CSS v4 工具类排序"
-  default_prompt: "Use $ym-tailwind-class-order to order these Tailwind classes."
