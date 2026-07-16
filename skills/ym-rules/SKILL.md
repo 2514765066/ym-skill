@@ -19,8 +19,8 @@ description: 编写、修改或审查 TypeScript、JavaScript、React、TSX、HT
 - 使用表达业务语义的函数名；事件处理函数以 `handle` 开头，例如 `handleSubmitOrder`。
 - 禁止使用 `function` 与 `var`；普通函数和回调均使用带代码块和显式 `return` 的箭头函数。
 - 需要定义类时使用 `class`，不要用函数模拟类。
-- 为所有函数添加简短中文注释说明职责。
-- 为所有数据声明添加简短中文注释，说明数据用途或业务含义。
+- 为所有函数添加简短中文单行注释说明职责，使用 `//`，不要使用 `/** */`。
+- 为所有数据声明添加简短中文单行注释，说明数据用途或业务含义，使用 `//`，不要使用 `/** */`。
 - 优先使用 `const`，避免使用 `let`。
 - 将错误处理、无效输入和退出条件放在函数前部，使用早返回减少嵌套。
 
@@ -31,14 +31,14 @@ description: 编写、修改或审查 TypeScript、JavaScript、React、TSX、HT
 - 多行表达式、深层属性访问、可选链、空值回退或包含多个逻辑条件的声明，注释应说明数据来源或计算规则。
 
 ```ts
-/** 订单详情接口地址 */
+// 订单详情接口地址
 const orderDetailEndpoint = '/api/orders/detail';
 
-/** 优先使用显式宽度，缺省时回退到文本节点默认宽度 */
+// 优先使用显式宽度，缺省时回退到文本节点默认宽度
 const editorWidth =
   explicitNodeSize.width ?? textNodeConfig.defaultSize.width;
 
-/** 根据订单状态返回展示文本 */
+// 根据订单状态返回展示文本
 const getOrderStatusText = (status: OrderStatus): string => {
   if (!status) {
     return '未知状态';
@@ -57,7 +57,7 @@ const getOrderStatusText = (status: OrderStatus): string => {
 - 在相邻 JSX 同级元素之间保留一行空行。
 
 ```tsx
-/** 展示订单金额摘要 */
+// 展示订单金额摘要
 export const OrderSummary = ({ total }: OrderSummaryProps): JSX.Element => {
   if (total < 0) {
     return <span>金额无效</span>;
